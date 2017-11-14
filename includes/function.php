@@ -4,15 +4,16 @@
 
 function reg_user()
 {
-	
-	$servername = "localhost";
-	$username = "root";
-	$password = "";
+	$dsn = getenv('MYSQL_DSN');
+	$user = getenv('MYSQL_USER');
+	$pass = getenv('MYSQL_PASSWORD');
+
 	try{
-    $dbh = new pdo( "mysql:host=localhost;dbname=lazzypropertiesdb",
-                    $username,
-                    $password);
-    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$dbh = new pdo( $dsn,
+						$user,
+						$pass);
+						$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		
 	}
 	catch(PDOException $ex){
 		echo 'Connection failed: ' . $ex->getmessage();
@@ -65,15 +66,16 @@ function reg_user()
 }
 
 function login(){
-	$servername = "localhost";
-	$username = "root";
-	$password = "";
-	
+	$dsn = getenv('MYSQL_DSN');
+	$user = getenv('MYSQL_USER');
+	$pass = getenv('MYSQL_PASSWORD');
+
 	try{
-    $dbh = new pdo( "mysql:host=localhost;dbname=lazzypropertiesdb",
-                    $username,
-                    $password);
-    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$dbh = new pdo( $dsn,
+						$user,
+						$pass);
+						$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		
 	}
 	catch(PDOException $ex){
 		echo 'Connection failed: ' . $ex->getmessage();
@@ -120,14 +122,16 @@ function login(){
 
 function post_property(){
 	
-	$servername = "localhost";
-	$username = "root";
-	$password = "";
+	$dsn = getenv('MYSQL_DSN');
+	$user = getenv('MYSQL_USER');
+	$pass = getenv('MYSQL_PASSWORD');
+
 	try{
-    $dbh = new pdo( "mysql:host=localhost;dbname=lazzypropertiesdb",
-                    $username,
-                    $password);
-    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$dbh = new pdo( $dsn,
+						$user,
+						$pass);
+						$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		
 	}
 	catch(PDOException $ex){
 		echo 'Connection failed: ' . $ex->getmessage();
