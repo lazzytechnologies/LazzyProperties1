@@ -9,9 +9,7 @@ function reg_user()
 	$dsn = getenv('MYSQL_DSN');
 	$user = getenv('MYSQL_USER');
 	$pass = getenv('MYSQL_PASSWORD');
-	if(!isset[$dsn]){
-		echo 'DSN not configured properly';
-	}
+	
 
 	try{
 		$dbh = new pdo( $dsn,
@@ -74,9 +72,7 @@ function login(){
 	$dsn = getenv('MYSQL_DSN');
 	$user = getenv('MYSQL_USER');
 	$pass = getenv('MYSQL_PASSWORD');
-	if(!isset[$dsn]){
-		echo 'DSN not configured properly';
-	}
+	
 
 	try{
 		$dbh = new pdo( $dsn,
@@ -133,9 +129,7 @@ function post_property(){
 	$dsn = getenv('MYSQL_DSN');
 	$user = getenv('MYSQL_USER');
 	$pass = getenv('MYSQL_PASSWORD');
-	if(!isset[$dsn]){
-		echo 'DSN not configured properly';
-	}
+	
 
 	try{
 		$dbh = new pdo( $dsn,
