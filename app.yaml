@@ -6,6 +6,6 @@ beta_settings:
 runtime_config:
   document_root: .
 env_variables:
-  MYSQL_DSN: mysql:dbname=lazzypropertiesdb;unix_socket=/cloudsql/cosmo-asia:asia-northeast1:lazzypropertiesdb
+  MYSQL_DSN: 'mysql:dbname=lazzypropertiesdb;unix_socket=/cloudsql/cosmo-asia:asia-northeast1:lazzypropertiesdb'
   MYSQL_USER: root
   MYSQL_PASSWORD: root
