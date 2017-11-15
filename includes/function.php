@@ -9,9 +9,9 @@ function reg_user()
 	$pass = getenv('MYSQL_PASSWORD');
 
 	try{
-		$dbh = new pdo( $dsn,
-						$user,
-						$pass);
+		$dbh = new pdo( 'mysql:dbname=lazzypropertiesdb;unix_socket=/cloudsql/cosmo-asia:asia-northeast1:lazzypropertiesdb',
+						'root',
+						'root');
 						$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		
 	}
@@ -71,9 +71,9 @@ function login(){
 	$pass = getenv('MYSQL_PASSWORD');
 
 	try{
-		$dbh = new pdo( $dsn,
-						$user,
-						$pass);
+		$dbh = new pdo( 'mysql:dbname=lazzypropertiesdb;unix_socket=/cloudsql/cosmo-asia:asia-northeast1:lazzypropertiesdb',
+						'root',
+						'root');
 						$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		
 	}
@@ -127,9 +127,9 @@ function post_property(){
 	$pass = getenv('MYSQL_PASSWORD');
 
 	try{
-		$dbh = new pdo( $dsn,
-						$user,
-						$pass);
+		$dbh = new pdo( 'mysql:dbname=lazzypropertiesdb;unix_socket=/cloudsql/cosmo-asia:asia-northeast1:lazzypropertiesdb',
+						'root',
+						'root');
 						$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		
 	}
