@@ -2,6 +2,7 @@
 session_start();?>
 <?php include "includes/header.php" ?>
 <?php include "includes/navigation.php" ?>
+<?php include "includes/connect.php" ?>
 <?php include "includes/function.php" ?>
 
 <?php 
@@ -56,7 +57,7 @@ session_start();?>
 
 
 <?php include "includes/footer.php" ?>
-<?php include "includes/connect.php" ?>
+
       
 
     
