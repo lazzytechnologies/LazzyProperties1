@@ -9,11 +9,14 @@ function reg_user()
 	$dsn = getenv('MYSQL_DSN');
 	$user = getenv('MYSQL_USER');
 	$pass = getenv('MYSQL_PASSWORD');
+	if(!isset[$dsn]){
+		echo 'DSN not configured properly';
+	}
 
 	try{
-		$dbh = new pdo( 'mysql:dbname=lazzypropertiesdb;unix_socket=/cloudsql/cosmo-asia:asia-northeast1:lazzypropertiesdb',
-						'root',
-						'root');
+		$dbh = new pdo( $dsn,
+						$user,
+						$pass);
 						$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		
 	}
@@ -71,11 +74,14 @@ function login(){
 	$dsn = getenv('MYSQL_DSN');
 	$user = getenv('MYSQL_USER');
 	$pass = getenv('MYSQL_PASSWORD');
+	if(!isset[$dsn]){
+		echo 'DSN not configured properly';
+	}
 
 	try{
-		$dbh = new pdo( 'mysql:dbname=lazzypropertiesdb;unix_socket=/cloudsql/cosmo-asia:asia-northeast1:lazzypropertiesdb',
-						'root',
-						'root');
+		$dbh = new pdo( $dsn,
+						$user,
+						$pass);
 						$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		
 	}
@@ -127,11 +133,14 @@ function post_property(){
 	$dsn = getenv('MYSQL_DSN');
 	$user = getenv('MYSQL_USER');
 	$pass = getenv('MYSQL_PASSWORD');
+	if(!isset[$dsn]){
+		echo 'DSN not configured properly';
+	}
 
 	try{
-		$dbh = new pdo( 'mysql:dbname=lazzypropertiesdb;unix_socket=/cloudsql/cosmo-asia:asia-northeast1:lazzypropertiesdb',
-						'root',
-						'root');
+		$dbh = new pdo( $dsn,
+						$user,
+						$pass);
 						$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		
 	}
