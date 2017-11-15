@@ -1,6 +1,8 @@
 env: flex
 runtime: php
 api_version: 1
+beta_settings:
+  cloud_sql_instances: "cosmo-asia:asia-northeast1:lazzypropertiesdb"
 runtime_config:
   document_root: .
 env_variables:
