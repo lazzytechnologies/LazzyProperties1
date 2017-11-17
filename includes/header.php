@@ -68,7 +68,18 @@
 
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/additional-methods.min.js"></script>
 
-
+	<style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 50%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      #map2 {
+		height: 300px;
+		margin-bottom:40px;
+	  }
+    </style>
 
 
 
