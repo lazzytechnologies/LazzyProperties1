@@ -8,13 +8,13 @@
             
                 <h1 class="navbar-brand">
            <a href="index.php" > <img src="img/logo-2.png" class="img-responsive"></a>
-       </h1>
-              <span class="profile">
-                <a id="logout" class="dropdown ymm-sw" href="#" class="navbar-text" class="pull-right">    logout</a>
-                            <span id="name" class="dropdown ymm-sw" class="navbar-text" class="pull-right">Hello, username   </span>
 
-                             
-                    </span>  
+       </h1>
+                <div class="button navbar-left">
+                          <span class="logout" class="dropdown ymm-sw" class="navbar-text" class="pull-right">Hello, username   </span>
+                             <a class="name" class="dropdown ymm-sw" href="#" class="navbar-text" class="pull-right">    logout</a>
+                          
+                      </div>
 
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
@@ -27,15 +27,12 @@
                    
                 </div>
 
-                    
+                
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse yamm" id="navigation">
                     
-                      <!--<div class="button navbar-right">
-                          <button class="navbar-btn nav-button wow bounceInRight login" onclick=" window.open('index.php?source=loginandregister')" data-wow-delay="0.30s">POST PROPERTY NOW!</button>
-                          
-                      </div>-->
+                      
 
 
                    
