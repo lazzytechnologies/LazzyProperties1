@@ -9,7 +9,7 @@ try{
                     $user,
                     $pass);
 					$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo 'Connection successful!';
+    
 }
 catch(PDOException $ex){
     echo 'Connection failed: ' . $ex->getmessage();

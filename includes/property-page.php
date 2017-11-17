@@ -66,14 +66,24 @@
                                 </div>
 
                                 <div class="col-xs-6 col-sm-3 col-md-3 p-b-15">
+                                    <span class="property-info-icon icon-bath">
+                                        <img src="assets/img/icon/os-orange.png">
+                                    </span>
+                                    <span class="property-info-entry">
+                                        <span class="property-info-label">Land</span>
+                                        <span class="property-info-value">30<b class="property-info-unit">Sqm</b></span>
+                                    </span>
+                                </div>
+								<div class="col-xs-6 col-sm-3 col-md-3 p-b-15">
                                     <span class="property-info icon-area">
                                         <img src="assets/img/icon/room-orange.png">
                                     </span>
                                     <span class="property-info-entry">
-                                        <span class="property-info-label">Area</span>
-                                        <span class="property-info-value">3500<b class="property-info-unit">Sq Ft</b></span>
+                                        <span class="property-info-label">Floor</span>
+                                        <span class="property-info-value">30<b class="property-info-unit">Sqm</b></span>
                                     </span>
                                 </div>
+
 
                                 <div class="col-xs-6 col-sm-3 col-md-3 p-b-15">
                                     <span class="property-info-icon icon-bed">
@@ -84,44 +94,24 @@
                                         <span class="property-info-value">3</span>
                                     </span>
                                 </div>
-
-                                <div class="col-xs-6 col-sm-3 col-md-3 p-b-15">
-                                    <span class="property-info-icon icon-bed">
-                                        <img src="assets/img/icon/cars-orange.png">
-                                    </span>
-                                    <span class="property-info-entry">
-                                        <span class="property-info-label">Car garages</span>
-                                        <span class="property-info-value">1</span>
-                                    </span>
-                                </div>
-
-                                <div class="col-xs-6 col-sm-3 col-md-3 p-b-15">
-                                    <span class="property-info-icon icon-bath">
-                                        <img src="assets/img/icon/os-orange.png">
-                                    </span>
-                                    <span class="property-info-entry">
-                                        <span class="property-info-label">Bathrooms</span>
-                                        <span class="property-info-value">3.5</span>
-                                    </span>
-                                </div>
-
-                                <div class="col-xs-6 col-sm-3 col-md-3 p-b-15">
-                                    <span class="property-info-icon icon-garage">
-                                        <img src="assets/img/icon/room-orange.png">
-                                    </span>
-                                    <span class="property-info-entry">
-                                        <span class="property-info-label">Garages</span>
-                                        <span class="property-info-value">2</span>
-                                    </span>
-                                </div>
                                 
                                 <div class="col-xs-6 col-sm-3 col-md-3 p-b-15">
                                     <span class="property-info-icon icon-garage">
                                         <img src="assets/img/icon/shawer-orange.png">
                                     </span>
                                     <span class="property-info-entry">
-                                        <span class="property-info-label">Garages</span>
+                                        <span class="property-info-label">Bathroom</span>
                                         <span class="property-info-value">2</span>
+                                    </span>
+                                </div>
+								
+								<div class="col-xs-6 col-sm-3 col-md-3 p-b-15">
+                                    <span class="property-info-icon icon-bed">
+                                        <img src="assets/img/icon/cars-orange.png">
+                                    </span>
+                                    <span class="property-info-entry">
+                                        <span class="property-info-label">Garages</span>
+                                        <span class="property-info-value">1</span>
                                     </span>
                                 </div>
 
@@ -266,7 +256,7 @@
                                                 <li><i class="pe-7s-mail strong"> </i> email@yourcompany.com</li>
                                                 <li><i class="pe-7s-call strong"> </i> +1 908 967 5906</li>
                                             </ul>
-                                            <p>Duis mollis  blandit tempus porttitor curabiturDuis mollis  blandit tempus porttitor curabitur , est non…</p>
+                                            <!--<p>Duis mollis  blandit tempus porttitor curabiturDuis mollis  blandit tempus porttitor curabitur , est non…</p>-->
                                         </div>
 
                                     </div>

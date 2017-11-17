@@ -1,22 +1,18 @@
-<?php include 'connect.php' ?>
-
 <?php
 
 
 
 function reg_user()
 {
-	$dsn = getenv('MYSQL_DSN');
-	$user = getenv('MYSQL_USER');
-	$pass = getenv('MYSQL_PASSWORD');
 	
-
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
 	try{
-		$dbh = new pdo( $dsn,
-						$user,
-						$pass);
-						$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		
+    $dbh = new pdo( "mysql:host=localhost;dbname=lazzypropertiesdb",
+                    $username,
+                    $password);
+    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	}
 	catch(PDOException $ex){
 		echo 'Connection failed: ' . $ex->getmessage();
@@ -69,17 +65,15 @@ function reg_user()
 }
 
 function login(){
-	$dsn = getenv('MYSQL_DSN');
-	$user = getenv('MYSQL_USER');
-	$pass = getenv('MYSQL_PASSWORD');
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
 	
-
 	try{
-		$dbh = new pdo( $dsn,
-						$user,
-						$pass);
-						$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		
+    $dbh = new pdo( "mysql:host=localhost;dbname=lazzypropertiesdb",
+                    $username,
+                    $password);
+    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	}
 	catch(PDOException $ex){
 		echo 'Connection failed: ' . $ex->getmessage();
@@ -126,17 +120,14 @@ function login(){
 
 function post_property(){
 	
-	$dsn = getenv('MYSQL_DSN');
-	$user = getenv('MYSQL_USER');
-	$pass = getenv('MYSQL_PASSWORD');
-	
-
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
 	try{
-		$dbh = new pdo( $dsn,
-						$user,
-						$pass);
-						$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		
+    $dbh = new pdo( "mysql:host=localhost;dbname=lazzypropertiesdb",
+                    $username,
+                    $password);
+    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	}
 	catch(PDOException $ex){
 		echo 'Connection failed: ' . $ex->getmessage();
@@ -214,5 +205,283 @@ function post_property(){
 		}
 	}
 }
+
+
+function property_list() {
+	$type="";
+	if(isset($_GET['type'])){
+		$type = $_GET['type'];
+	}
+	else {
+		$type="";
+	}
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
+	$i = "'";
+	try{
+    $dbh = new pdo( "mysql:host=localhost;dbname=lazzypropertiesdb",
+                    $username,
+                    $password);
+    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	}
+	catch(PDOException $ex){
+		echo 'Connection failed: ' . $ex->getmessage();
+	}
+	if($type=="forsale"){
+		try{
+			//Select User With Same Email && Pass
+			$stmt = $dbh->prepare("SELECT * FROM Property_List WHERE Type='a'");
+			$stmt->execute();
+			$count = (int)$stmt->rowCount();
+			$results = $stmt->fetchAll();
+			$link = 'index.php?source=property-page';
+			foreach($results as $row) {
+				
+				$desc = htmlentities($row['Description']);
+				
+				
+				echo'<div class="col-sm-6 col-md-4 p0">
+                    <div class="box-two proerty-item">
+                        <div class="item-thumb">
+                            <a href="index.php?source=property-page&propId=' . htmlentities($row['Property_ID']) . '" ><img src="assets/img/demo/property-1.jpg"></a>
+                            </div>
+
+                                <div class="item-entry overflow">
+                                    <h5><a href="property-1.html">' .htmlentities($row['Title']) . '</a></h5>
+                                    <div class="dot-hr"></div>
+                                    <span class="pull-left"><b> Land :</b>' . htmlentities($row['Land']) . 'sqm </span>
+									<br/>
+									<span class="pull-left"><b> Floor :</b> ' . htmlentities($row['Floor']) . 'sqm </span>
+                                    <span class="proerty-price pull-right"> &#8369 ' . htmlentities($row['Price']) . '</span>
+									<span class="pull-left"><b> ' . htmlentities($row['StreetAddress']) .', ' . htmlentities($row['City']) . ', ' . htmlentities($row['State']) . ', ' . htmlentities($row['Country']) . '</b> </span>
+                                    <p style="display: none;">'. substr($desc,0,50) .' ...</p>
+                                <div class="property-icon">
+                                <img src="assets/img/icon/bed.png">(' . htmlentities($row['Bed']) . ')|
+                                <img src="assets/img/icon/shawer.png">(' . htmlentities($row['Bath']) . ')|
+                                <img src="assets/img/icon/cars.png">(' . htmlentities($row['Garage']) . ')
+												
+                            </div>
+                        </div> 
+                    </div>
+                </div>';
+				
+			}
+			// Fetch data from query
+			
+			//Start PHP Session
+			//$_SESSION['ID'] = $result->
+			//echo "Log In Successful!";
+			//echo "<script> location.href = 'index.php' </script>";
+		}
+		catch(PDOException $e){
+			echo "Error: " . $e->getMessage();
+		}
+	}
+	else if($type=="forrent"){
+		try{
+			//Select User With Same Email && Pass
+			$stmt = $dbh->prepare("SELECT * FROM Property_List WHERE Type='b'");
+			$stmt->execute();
+			$count = (int)$stmt->rowCount();
+			$results = $stmt->fetchAll();
+			$link = 'index.php?source=property-page';
+			foreach($results as $row) {
+				
+				$desc = htmlentities($row['Description']);
+				
+				
+				echo'<div class="col-sm-6 col-md-4 p0">
+                    <div class="box-two proerty-item">
+                        <div class="item-thumb">
+                            <a href="index.php?source=property-page&propId=' . htmlentities($row['Property_ID']) . '" ><img src="assets/img/demo/property-1.jpg"></a>
+                            </div>
+
+                                <div class="item-entry overflow">
+                                    <h5><a href="property-1.html">' .htmlentities($row['Title']) . '</a></h5>
+                                    <div class="dot-hr"></div>
+                                    <span class="pull-left"><b> Land :</b>' . htmlentities($row['Land']) . 'sqm </span>
+									<br/>
+									<span class="pull-left"><b> Floor :</b> ' . htmlentities($row['Floor']) . 'sqm </span>
+                                    <span class="proerty-price pull-right"> &#8369 ' . htmlentities($row['Price']) . '</span>
+									<span class="pull-left"><b> ' . htmlentities($row['StreetAddress']) .', ' . htmlentities($row['City']) . ', ' . htmlentities($row['State']) . ', ' . htmlentities($row['Country']) . '</b> </span>
+                                    <p style="display: none;">'. substr($desc,0,50) .' ...</p>
+                                <div class="property-icon">
+                                <img src="assets/img/icon/bed.png">(' . htmlentities($row['Bed']) . ')|
+                                <img src="assets/img/icon/shawer.png">(' . htmlentities($row['Bath']) . ')|
+                                <img src="assets/img/icon/cars.png">(' . htmlentities($row['Garage']) . ')
+												
+                            </div>
+                        </div> 
+                    </div>
+                </div>';
+				
+			}
+			// Fetch data from query
+			
+			//Start PHP Session
+			//$_SESSION['ID'] = $result->
+			//echo "Log In Successful!";
+			//echo "<script> location.href = 'index.php' </script>";
+		}
+		catch(PDOException $e){
+			echo "Error: " . $e->getMessage();
+		}
+	}
+	else if($type=="new"){
+		try{
+			//Select User With Same Email && Pass
+			$stmt = $dbh->prepare("SELECT * FROM Property_List WHERE Type='c'");
+			$stmt->execute();
+			$count = (int)$stmt->rowCount();
+			$results = $stmt->fetchAll();
+			$link = 'index.php?source=property-page';
+			foreach($results as $row) {
+				
+				$desc = htmlentities($row['Description']);
+				
+				
+				echo'<div class="col-sm-6 col-md-4 p0">
+                    <div class="box-two proerty-item">
+                        <div class="item-thumb">
+                            <a href="index.php?source=property-page&propId=' . htmlentities($row['Property_ID']) . '" ><img src="assets/img/demo/property-1.jpg"></a>
+                            </div>
+
+                                <div class="item-entry overflow">
+                                    <h5><a href="property-1.html">' .htmlentities($row['Title']) . '</a></h5>
+                                    <div class="dot-hr"></div>
+                                    <span class="pull-left"><b> Land :</b>' . htmlentities($row['Land']) . 'sqm </span>
+									<br/>
+									<span class="pull-left"><b> Floor :</b> ' . htmlentities($row['Floor']) . 'sqm </span>
+                                    <span class="proerty-price pull-right"> &#8369 ' . htmlentities($row['Price']) . '</span>
+									<span class="pull-left"><b> ' . htmlentities($row['StreetAddress']) .', ' . htmlentities($row['City']) . ', ' . htmlentities($row['State']) . ', ' . htmlentities($row['Country']) . '</b> </span>
+                                    <p style="display: none;">'. substr($desc,0,50) .' ...</p>
+                                <div class="property-icon">
+                                <img src="assets/img/icon/bed.png">(' . htmlentities($row['Bed']) . ')|
+                                <img src="assets/img/icon/shawer.png">(' . htmlentities($row['Bath']) . ')|
+                                <img src="assets/img/icon/cars.png">(' . htmlentities($row['Garage']) . ')
+												
+                            </div>
+                        </div> 
+                    </div>
+                </div>';
+				
+			}
+			// Fetch data from query
+			
+			//Start PHP Session
+			//$_SESSION['ID'] = $result->
+			//echo "Log In Successful!";
+			//echo "<script> location.href = 'index.php' </script>";
+		}
+		catch(PDOException $e){
+			echo "Error: " . $e->getMessage();
+		}
+	}
+	else if($type=="commercialland"){
+		try{
+			//Select User With Same Email && Pass
+			$stmt = $dbh->prepare("SELECT * FROM Property_List WHERE Type='d'");
+			$stmt->execute();
+			$count = (int)$stmt->rowCount();
+			$results = $stmt->fetchAll();
+			$link = 'index.php?source=property-page';
+			foreach($results as $row) {
+				
+				$desc = htmlentities($row['Description']);
+				
+				
+				echo'<div class="col-sm-6 col-md-4 p0">
+                    <div class="box-two proerty-item">
+                        <div class="item-thumb">
+                            <a href="index.php?source=property-page&propId=' . htmlentities($row['Property_ID']) . '" ><img src="assets/img/demo/property-1.jpg"></a>
+                            </div>
+
+                                <div class="item-entry overflow">
+                                    <h5><a href="property-1.html">' .htmlentities($row['Title']) . '</a></h5>
+                                    <div class="dot-hr"></div>
+                                    <span class="pull-left"><b> Land :</b>' . htmlentities($row['Land']) . 'sqm </span>
+									<br/>
+									<span class="pull-left"><b> Floor :</b> ' . htmlentities($row['Floor']) . 'sqm </span>
+                                    <span class="proerty-price pull-right"> &#8369 ' . htmlentities($row['Price']) . '</span>
+									<span class="pull-left"><b> ' . htmlentities($row['StreetAddress']) .', ' . htmlentities($row['City']) . ', ' . htmlentities($row['State']) . ', ' . htmlentities($row['Country']) . '</b> </span>
+                                    <p style="display: none;">'. substr($desc,0,50) .' ...</p>
+                                <div class="property-icon">
+                                <img src="assets/img/icon/bed.png">(' . htmlentities($row['Bed']) . ')|
+                                <img src="assets/img/icon/shawer.png">(' . htmlentities($row['Bath']) . ')|
+                                <img src="assets/img/icon/cars.png">(' . htmlentities($row['Garage']) . ')
+												
+                            </div>
+                        </div> 
+                    </div>
+                </div>';
+				
+			}
+			// Fetch data from query
+			
+			//Start PHP Session
+			//$_SESSION['ID'] = $result->
+			//echo "Log In Successful!";
+			//echo "<script> location.href = 'index.php' </script>";
+		}
+		catch(PDOException $e){
+			echo "Error: " . $e->getMessage();
+		}
+	}
+	else {
+		
+		try{
+			//Select User With Same Email && Pass
+			$stmt = $dbh->prepare("SELECT * FROM Property_List");
+			$stmt->execute();
+			$count = (int)$stmt->rowCount();
+			$results = $stmt->fetchAll();
+			$link = 'index.php?source=property-page';
+			foreach($results as $row) {
+				
+				$desc = htmlentities($row['Description']);
+				
+				
+				echo'<div class="col-sm-6 col-md-4 p0">
+                    <div class="box-two proerty-item">
+                        <div class="item-thumb">
+                            <a href="index.php?source=property-page&propId=' . htmlentities($row['Property_ID']) . '" ><img src="assets/img/demo/property-1.jpg"></a>
+                            </div>
+
+                                <div class="item-entry overflow">
+                                    <h5><a href="property-1.html">' .htmlentities($row['Title']) . '</a></h5>
+                                    <div class="dot-hr"></div>
+                                    <span class="pull-left"><b> Land :</b>' . htmlentities($row['Land']) . 'sqm </span>
+									<br/>
+									<span class="pull-left"><b> Floor :</b> ' . htmlentities($row['Floor']) . 'sqm </span>
+                                    <span class="proerty-price pull-right"> &#8369 ' . htmlentities($row['Price']) . '</span>
+									<span class="pull-left"><b> ' . htmlentities($row['StreetAddress']) .', ' . htmlentities($row['City']) . ', ' . htmlentities($row['State']) . ', ' . htmlentities($row['Country']) . '</b> </span>
+                                    <p style="display: none;">'. substr($desc,0,50) .' ...</p>
+                                <div class="property-icon">
+                                <img src="assets/img/icon/bed.png">(' . htmlentities($row['Bed']) . ')|
+                                <img src="assets/img/icon/shawer.png">(' . htmlentities($row['Bath']) . ')|
+                                <img src="assets/img/icon/cars.png">(' . htmlentities($row['Garage']) . ')
+												
+                            </div>
+                        </div> 
+                    </div>
+                </div>';
+				
+			}
+			// Fetch data from query
+			
+			//Start PHP Session
+			//$_SESSION['ID'] = $result->
+			//echo "Log In Successful!";
+			//echo "<script> location.href = 'index.php' </script>";
+		}
+		catch(PDOException $e){
+			echo "Error: " . $e->getMessage();
+		}
+		
+	}
+	
+}
+
 
 ?>
