@@ -2,8 +2,12 @@
 session_start();?>
 <?php include "includes/header.php" ?>
 <?php include "includes/navigation.php" ?>
+
 <?php include "includes/connection.php" ?>
 <?php include "includes/function.php" ?>
+
+<?php include "includes/connect.php" ?>
+
 
 <?php 
     
@@ -21,7 +25,7 @@ session_start();?>
        
         case 'property-forsale':
              include "includes/property-main.php"; 
-            break; 
+            break;
         case 'property-forrent':
              include "includes/property-main.php"; 
             break;
@@ -40,11 +44,10 @@ session_start();?>
         case 'propertyadvertise':
              include "includes/propertyadvertise.php"; 
             break;
-		case 'property-page':
-             include "includes/property-page.php"; 
-            break;
         case 'postproperty':
-             include "includes/post-property.php"; 
+             include "includes/post-property.php";
+        case 'profile':
+             include "includes/profile.php"; 
             break;    
         default:
             include "includes/homepage-search.php";
