@@ -1,10 +1,20 @@
 <nav class="navbar navbar-default ">
 
             <div class="container">
-                <h1 class="navbar-brand brand-name">
-           <a href="index.php"><img class="img-responsive2"       
-           src="images/DigitalPondlogo.png">Logo</a>
-       </h2>
+             
+                
+
+
+            
+                <h1 class="navbar-brand">
+           <a href="index.php" > <img src="img/logo-2.png" class="img-responsive"></a>
+       </h1>
+              <span class="profile">
+                <a id="logout" class="dropdown ymm-sw" href="#" class="navbar-text" class="pull-right">    logout</a>
+                            <span id="name" class="dropdown ymm-sw" class="navbar-text" class="pull-right">Hello, username   </span>
+
+                             
+                    </span>  
 
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
@@ -58,8 +68,6 @@
 
                              
 
-                            <span class="dropdown ymm-sw" class="navbar-text" class="pull-right">Hello, username</span>
-                       <a  class="dropdown ymm-sw" href="#" class="navbar-text" class="pull-right">logout</a>
 
 
                       <li class="dropdown ymm-sw " data-wow-delay="0.1s">

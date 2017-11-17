@@ -70,7 +70,7 @@ p {
     margin:0;
 }
 a {
-    color: #243447;
+    color: #ecf0f1;
     outline: 0;
     font-weight: bold;
     -webkit-transition: all .8s ease;
@@ -78,7 +78,7 @@ a {
 } 
 a:hover {
     text-decoration: none;
-    color: #1f2222;
+    color: white;
     -webkit-transition: all .8s ease;
     transition: all .8s ease;
 }
@@ -714,7 +714,7 @@ label small{
 .navbar-default .navbar-nav > li > a{
     position: fixed;
     color: #eee;
-    font-size: 20px;
+    font-size: 1em;
     font-weight: 430;
     text-transform: capitalize;
     position: relative;
@@ -775,9 +775,9 @@ position: fixed;
     background-color: #c2c2c2;
     border: medium none;
     color: #333;
-    font-size: 20px;
+    font-size: 1em;
     font-weight: 400;
-    padding: 8px 20px;
+    padding: 5px 2px;
     border-radius: 2px;
     -webkit-transition: all 0.4s ease;
     -moz-transition: all 0.4s ease;
@@ -786,7 +786,7 @@ position: fixed;
 }
 .nav-button.login{
     background-color: #33aabb;
-    margin-right: 5px;
+    margin-right: 30px;
     margin-top: -5px;
 }
 .nav-button.reg {
@@ -3123,4 +3123,49 @@ input[type=number]::-webkit-outer-spin-button {
     -moz-appearance: none;
     appearance: none;
     margin: 0; 
+}
+
+@media (max-width: 767px) { 
+    .navbar-brand {
+        padding: 0;        
+    }
+
+    .navbar-brand img {
+    margin-top: -15px;
+        margin-left: 5px;
+
+    }
+
+    #name{
+
+    float: right;
+    margin-right: 10px; 
+    padding-top: 20px; 
+}
+#logout{
+
+    float: right;
+    padding-top: 20px; 
+}
+
+
+}
+
+#name{
+
+    float: right;
+    margin-right: 10px; 
+    padding-top: 20px; 
+}
+#logout{
+
+    float: right;
+    padding-top: 20px; 
+}
+.img-responsive {
+    height: auto;
+    width: auto;
+    margin-top: -30px;
+    max-height: 72px;
+    max-width: 250px;
 }
