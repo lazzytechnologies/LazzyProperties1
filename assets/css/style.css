@@ -3104,3 +3104,23 @@ padding: 10px;
 #map {
     height: 300px;
 }
+
+
+.form-error{
+    color: red;
+}
+
+
+.input-error{
+
+    box-shadow: 0 0 5px red;
+
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
