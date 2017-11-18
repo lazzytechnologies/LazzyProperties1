@@ -115,6 +115,8 @@ function login(){
 			else {
 				echo "Incorrect email or password.";
 			}
+			header('Location: index.php');
+			exit();
 			// Fetch data from query
 			
 			//Start PHP Session

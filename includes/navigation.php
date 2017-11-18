@@ -11,9 +11,14 @@
 
        </h1>
                 <div class="button navbar-left">
-                          <span class="logout" class="dropdown ymm-sw" class="navbar-text" class="pull-right">Hello, username   </span>
-                             <a class="name" class="dropdown ymm-sw" href="#" class="navbar-text" class="pull-right">    logout</a>
-                          
+				<?php  if(isset($_SESSION['ID'])){
+                          echo '<span class="logout" class="dropdown ymm-sw" href="index.php?source=profile" class="navbar-text" class="pull-right">Hello, <u><a href="index.php?source=profile">'. $_SESSION['Email'] .'</a></u>   </span>
+                             <a class="name" class="dropdown ymm-sw" href="logout.php" class="navbar-text" class="pull-right">Log out</a>';
+						}
+						else {
+							echo '<a href="index.php?source=loginandregister" class="name" class="dropdown ymm-sw" href="#" class="navbar-text" class="pull-right"> Log In/Register</a>';
+						}
+				?>
                       </div>
 
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -70,7 +75,7 @@
                       <li class="dropdown ymm-sw " data-wow-delay="0.1s">
                             <div class="button navbar-right">
 
-                          <button class="navbar-btn nav-button wow bounceInRight login" onclick="location.href='  index.php?source=loginandregister'" data-wow-delay="0.30s">POST PROPERTY NOW!</button>
+                          <button class="navbar-btn nav-button wow bounceInRight login" onclick="<?php $i="'"; if(isset($_SESSION['ID'])){ echo 'location.href='.$i.'  index.php?source=postproperty'.$i; }else{echo 'location.href='.$i.'  index.php?source=loginandregister'.$i;}?>" data-wow-delay="0.30s">POST PROPERTY NOW!</button>
                           
                       </div>
                            

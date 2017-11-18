@@ -46,6 +46,7 @@ session_start();?>
             break;
         case 'postproperty':
              include "includes/post-property.php";
+			 break;
         case 'profile':
              include "includes/profile.php"; 
             break;    
